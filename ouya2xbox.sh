@@ -142,6 +142,12 @@ function register_controller() {
     fi
 }
 
+# Verify that we run as root
+if [ "$(whoami)" != "root" ]; then
+        echo "Please run script as root"
+        exit 1
+fi
+
 
 # Make sure we exit gracefully
 echo "Press Ctrl+C to exit"
